@@ -1,0 +1,5 @@
+#!/bin/bash
+import py_compile
+py_compile.compile('main.py')
+python3 $PYFILE
+chmod +x $PYFILE'c'; rmdir __pycache__
