@@ -1,0 +1,1 @@
+__ LAMBDA , Map , Filter & Reduce __
