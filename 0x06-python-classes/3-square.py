@@ -15,6 +15,7 @@ class Square:
             raise Exception('size must be an integer')
         except ValueError:
             raise Exception('size must be >= 0')
+
     def area(self):
         """Example function with PEP 484 type annotations.
         Args:
