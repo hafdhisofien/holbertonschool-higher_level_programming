@@ -2,4 +2,4 @@
 class Square:
      """" A simple Square"""
      def my_square(self):
-         pass
+         return 0
