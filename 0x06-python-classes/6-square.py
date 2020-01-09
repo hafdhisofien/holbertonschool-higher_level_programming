@@ -2,13 +2,15 @@
 class Square:
     """" A simple Square"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Example function with PEP 484 type annotations.
         Args:
         self: self.
         size: size of my_square.
+        postion: position of my_square
         """
         self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -33,6 +35,30 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        """ Get position.
+        Args:
+        self:self.
+        Returns:
+        None.
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """ set postion
+        Args
+        self:self.
+        value:position .
+        Returns:
+        None.
+        """
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
+
     def area(self):
         """ area of my_square.
         Args:
@@ -46,14 +72,16 @@ class Square:
     def my_print(self):
         """ prints a sqaure
         Args:
-        self: self.
-        Returns:
-        None .
+        self:self
+        Return:
+        None.
         """
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print("#", end='')
+            a , b = self.__position
+            for i in range(b):
                 print()
+            for j in range(self.__size):
+                    print(" " * a, end='')
+                    print("#" * self.__size)
