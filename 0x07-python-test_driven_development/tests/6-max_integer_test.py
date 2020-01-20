@@ -5,20 +5,18 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
-    def empty_list_test(self):
-        self.assertEqual(max_integer([]), None)
 
-    def nagative_test(self):
-        my_list = [-1, -22, -3, -4]
-        self.assertEqual(max_integer(my_list), -1)
+    def setUp(self):
+        self.li = [1, 2, 3, 4]
+        self.li_str = [1, 2, "A", 3]
 
-    def mixed_test(self):
-        my_list = [2, 3, 4, 5, 'd']
-        self.assertEqual(max_integer(my_list), "d")
+    def test_maxinlist(self):
+        self.assertEqual(max_integer(self.li), 4)
 
-    def test_none(self):
-        with self.assertRaises(TypeError):
-            max_integer(None)
+    def test_strinlist(self):
+        #test list contain strings
+        self.assertRaises(TypeError, max_integer(self.li_str))
 
-    def with_string(self):
-        self.assertEqual(max_integer("string"), "f")
+
+if __name__ == '__main__':
+    unittest.main()
