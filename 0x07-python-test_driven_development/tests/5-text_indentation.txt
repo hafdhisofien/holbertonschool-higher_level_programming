@@ -1,0 +1,69 @@
+
+5-text_indentation.py
+
+
+"""
+
+import the module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+
+usage:
+
+>>> text_indentation("My name is, sofien")
+My name is, sofien
+
+>>> text_indentation("sofien hafdhi")
+sofien hafdhi
+
+>>> text_indentation("")
+
+>>> text_indentation('   .?:      ')
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+
+
+text is NaN:
+
+>>> text_indentation([2, 3, 4])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+
+text is - NaN:
+
+>>> text_indentation(-1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+
+text is array[]:
+
+>>> text_indentation([])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+
+text is tuple({}):
+
+>>> text_indentation({})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+
+"""
