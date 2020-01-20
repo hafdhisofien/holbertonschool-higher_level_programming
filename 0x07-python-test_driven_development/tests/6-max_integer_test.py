@@ -5,41 +5,48 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
+    
+    def setUp(self):
+        self.li = [1, 2, 3, 4]
+        self.li_str = [1, 2, "A", 3]
 
     def empty_list_test(self):
         self.assertEqual(max_integer([]), None)
 
-    def test_max_front(self):
+    def max_front(self):
         my_list = [5, 2, 3, 4]
         self.assertEqual(max_integer(my_list), 5)
 
-    def test_max_middle(self):
+    def max_middle(self):
         my_list = [5, 2, 99, 3, 4]
         self.assertEqual(max_integer(my_list), 99)
 
-    def test_max_end(self):
+    def max_end(self):
         my_list = [1, 2, 3, 4, 56]
         self.assertEqual(max_integer(my_list), 56)
 
-    def test_max_long(self):
+    def max_long(self):
         my_list = [1, 2, 3, 4, 5, 77, 88, 99, 0, 56]
         self.assertEqual(max_integer(my_list), 99)
 
-    def test_negative(self):
+    def negative(self):
         my_list = [-1, -22, -3, -4]
         self.assertEqual(max_integer(my_list), -1)
 
-    def mixed_cases_test(self):
+    def mixed_cases(self):
         my_list = [2, 3, 4, 5, 'd']
         self.assertEqual(max_integer(my_list), "d")
 
-    def isnone_test(self):
+    def isnone(self):
         my_list = []
         self.assertEqual(max_integer(my_list), None)
 
-    def test_none(self):
+    def none(self):
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def with_string(self):
+    def string(self):
         self.assertEqual(max_integer("string"), "t")
+
+if __name__ == '__main__':
+    unittest.main()
