@@ -4,9 +4,10 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
-    
-    def test_empty_list(self):
+
+    def empty_list_test(self):
         self.assertEqual(max_integer([]), None)
 
     def test_max_front(self):
@@ -29,11 +30,11 @@ class TestMaxInteger(unittest.TestCase):
         my_list = [-1, -22, -3, -4]
         self.assertEqual(max_integer(my_list), -1)
 
-    def test_mixed_cases(self):
+    def mixed_cases_test(self):
         my_list = [2, 3, 4, 5, 'd']
         self.assertEqual(max_integer(my_list), "d")
 
-    def test_isnone(self):
+    def isnone_test(self):
         my_list = []
         self.assertEqual(max_integer(my_list), None)
 
@@ -41,5 +42,5 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def test_with_string(self):
+    def with_string(self):
         self.assertEqual(max_integer("string"), "t")
