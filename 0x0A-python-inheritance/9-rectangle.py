@@ -4,6 +4,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 import my class BaseGeometry
 """
 
+
 class Rectangle(BaseGeometry):
     """
     class Rectangle that inherits from BaseGeometry
@@ -19,13 +20,13 @@ class Rectangle(BaseGeometry):
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
-        
+
     def area(self):
         """
         implemented the area method
         """
         return self.__height * self.__width
-        
+
     def __str__(self):
         """
         function that returns, the following
