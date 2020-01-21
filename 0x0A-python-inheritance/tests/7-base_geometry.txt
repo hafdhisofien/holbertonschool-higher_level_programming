@@ -1,0 +1,85 @@
+
+7. Integer validator
+
+"""
+
+import:
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+value is 0:
+
+>>> bg.integer_validator("sofien", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+
+value is negative:
+
+>>> bg.integer_validator("sofien", -4)
+Traceback (most recent call last):
+...
+ValueError: tmp must be greater than 0
+
+
+value is string:
+
+>>> bg.integer_validator("sofien", "hafdhi")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+
+value is none:
+
+
+>>> bg.integer_validator("sofien", None)
+Traceback (most recent call last):
+...
+TypeError: tmp must be an integer
+
+
+value is array:
+
+
+>>> bg.integer_validator("sofien", [1,2])
+Traceback (most recent call last):
+...
+TypeError: tmp must be an integer
+
+value is tuple:
+
+
+>>> bg.integer_validator("sofien", {3,4})
+Traceback (most recent call last):
+...
+TypeError: tmp must be an integer
+
+
+value is bool:
+
+>>> bg.integer_validator("sofien", True)
+Traceback (most recent call last):
+...
+TypeError: tmp must be an integer
+
+
+area not implemented:
+
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+
+value arguement missing:
+
+>>> bg.integer_validator("sofien")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+"""
