@@ -9,7 +9,7 @@ class Student:
         """
         constructing our class.
         Args:
-        first_name: first name passed. 
+        first_name: first name passed.
         last_name: last name passed.
         age: age passed.
         Returns: None.
@@ -17,7 +17,7 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-    
+
     def to_json(self):
         """
         that retrieves a dictionary representation of a Student instance
