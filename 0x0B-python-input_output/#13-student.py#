@@ -27,9 +27,9 @@ class Student:
         attrs:list of strings contains the attribute
         Returns: the dictionary
         """
-        my_dict= {}
         if attrs is None:
             return self.__dict__
+        my_dict = {}
         for items in attrs:
             if hasattr(self, items):
                 my_dict[items] = getattr(self, items)
