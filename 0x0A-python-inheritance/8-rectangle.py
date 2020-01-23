@@ -12,12 +12,12 @@ class Rectangle(BaseGeometry):
     """
     def __init__(self, width, height):
         """
-        private attributes. No getter or setter
-        """
-        self.__width = width
-        self.__height = height
-        """
         positive integers, validated by integer_validator
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+        """
+        private attrs , no getters/setters
+        """
+        self.__width = width
+        self.__height = height
