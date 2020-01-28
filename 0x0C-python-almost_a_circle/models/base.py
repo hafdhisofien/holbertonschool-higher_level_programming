@@ -6,6 +6,10 @@ import json
 """
 importing json functions
 """
+import csv
+"""
+importing csv functions
+"""
 
 
 class Base:
@@ -81,3 +85,28 @@ class Base:
             return list_instance
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv file
+        """
+
+        fieldnames = [item.to_dictionary() for item in list_objs]
+        with open(cls.__name__ + ".csv", mode="w") as csvfile:
+            write_to = csv.DictWriter(csvfile, fieldnames[0].keys())
+            write_to.writerows(fieldnames)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from csv file
+        """
+
+        fieldnames = []
+        fieldnames_dict = {}
+        with open(cls.__name__ + ".csv", mode="r") as csvfile:
+            csvfile = csv.DictReader(csvfile)
+            for item in csvfile:
+                for i, j in dict(item).items():
+                    fieldnames_dict[i] = int(j)
+                fieldnames.append(cls.create(**fieldnames_dict))
+        return fieldnames
