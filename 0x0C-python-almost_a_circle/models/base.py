@@ -94,6 +94,7 @@ class Base:
         fieldnames = [item.to_dictionary() for item in list_objs]
         with open(cls.__name__ + ".csv", mode="w") as csvfile:
             write_to = csv.DictWriter(csvfile, fieldnames[0].keys())
+            write_to.writeheader()
             write_to.writerows(fieldnames)
 
     @classmethod
