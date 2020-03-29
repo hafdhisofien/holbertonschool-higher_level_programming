@@ -16,8 +16,9 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(bind=engine)
-    california = State(name="California")
-    california.cities = [City(name="San Francisco")]
-    session.add(california)
+    cali_state = State(name='California')
+    francisco_city = City(name='San Francisco')
+    cali_state.cities.append(francisco_city)
+    session.add_all([francisco_city, cali_state])
     session.commit()
     session.close()
